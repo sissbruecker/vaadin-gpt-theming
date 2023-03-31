@@ -1,1 +1,7 @@
-@import url('./main-layout.css');
+body {
+    background: var(--lumo-contrast-50pct);
+}
+
+vaadin-connection-indicator {
+    display: none !important;
+}

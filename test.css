@@ -1,0 +1,28 @@
+vaadin-text-field::part(input-field) {
+    background-image: linear-gradient(to right, #FFDAB9, #FFB6C1, #FFC0CB, #FF69B4, #FF00FF, #9400D3, #4B0082);
+    background-size: 200% auto;
+    border-color: #7F24DC;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    color: #4B0082;
+    font-size: 16px;
+}
+
+vaadin-text-field::part(label) {
+    color: #7F24DC;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: wobble 1s infinite;
+}
+
+@keyframes wobble {
+    0% { transform: translateX(0); }
+    15% { transform: translateX(-5px) rotate(-5deg); }
+    30% { transform: translateX(5px) rotate(5deg); }
+    45% { transform: translateX(-5px) rotate(5deg); }
+    60% { transform: translateX(5px) rotate(-5deg); }
+    75% { transform: translateX(-5px) rotate(-5deg); }
+    100% { transform: translateX(0); }
+}
