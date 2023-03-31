@@ -5,7 +5,8 @@ import dev.hilla.Nonnull;
 public class ThemeTask {
     private String prompt;
     private String reply;
-    private String css;
+    private String replyCss;
+    private String fullCss;
 
     @Nonnull
     public String getPrompt() {
@@ -26,11 +27,20 @@ public class ThemeTask {
     }
 
     @Nonnull
-    public String getCss() {
-        return css;
+    public String getReplyCss() {
+        return replyCss;
     }
 
-    public void setCss(String css) {
-        this.css = css;
+    public void setReplyCss(String replyCss) {
+        this.replyCss = replyCss;
+    }
+
+    @Nonnull
+    public String getFullCss() {
+        return fullCss;
+    }
+
+    public void setFullCss(String fullCss) {
+        this.fullCss = fullCss;
     }
 }

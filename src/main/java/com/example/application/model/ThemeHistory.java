@@ -1,6 +1,7 @@
 package com.example.application.model;
 
 import com.example.application.services.ThemingService;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.hilla.Nonnull;
 
 import java.util.ArrayList;
@@ -30,5 +31,14 @@ public class ThemeHistory {
     @Nonnull
     public String getInitialCss() {
         return initialCss;
+    }
+
+    @JsonIgnore
+    public String getCurrentCss() {
+        if (tasks.size() == 0) {
+            return initialCss;
+        }
+
+        return tasks.get(tasks.size() - 1).getFullCss();
     }
 }

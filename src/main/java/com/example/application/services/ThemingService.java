@@ -50,20 +50,25 @@ public class ThemingService {
     }
 
     public void executeTask(ThemeHistory history, String prompt) {
-        logger.debug("Execute task: {}", prompt);
+        logger.debug("Execute prompt: {}", prompt);
         ChatCompletionRequest request = createRequest(history, prompt);
         ChatCompletionResult result = openAiService.createChatCompletion(request);
 
         ChatCompletionChoice chatCompletionChoice = result.getChoices().get(0);
         String reply = chatCompletionChoice.getMessage().getContent();
-        String css = extractCss(reply);
-        logger.debug("Got reply: {}", reply);
-        logger.debug("Extracted CSS: {}", css);
+        String replyCss = extractCss(reply);
+        logger.debug("Got reply:\n{}", reply);
+        logger.debug("Extracted CSS:\n{}", replyCss);
+
+        CssModifier cssModifier = new CssModifier(history.getCurrentCss());
+        cssModifier.updateCss(replyCss);
+        String fullCss = cssModifier.getCss();
 
         ThemeTask task = new ThemeTask();
         task.setPrompt(prompt);
         task.setReply(reply);
-        task.setCss(css);
+        task.setReplyCss(replyCss);
+        task.setFullCss(fullCss);
         history.addTask(task);
     }
 
@@ -101,8 +106,12 @@ public class ThemingService {
                 Your task is to modify the CSS code for a web component.
 
                 For the first prompt, I'll provide the initial CSS that contains multiple rules.
-                For future prompts, use the CSS that you have returned from the previous response.
-                Always return all of the initial CSS rules, including the ones you did not modify.
+                Only return the CSS properties that you need to modify for the current task, list each selector separately and do not use selector lists.
+                Only modify the existing rules.
+                Do not use custom CSS properties.
+                For future prompts, keep in mind the initial CSS and the modifications you have made so far.
+                If you are asked to do something again, then apply the same modification to the current state of the CSS.
+                For example, if you are asked to increase the font size twice, then continue increasing the font size from the previous value.
                 Only return the CSS code and do not provide explanations.
 
                 The initial CSS code for the component is:

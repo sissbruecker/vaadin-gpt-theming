@@ -84,6 +84,7 @@
     "@vaadin/vertical-layout": "24.0.2",
     "@vaadin/virtual-list": "24.0.2",
     "construct-style-sheets-polyfill": "3.1.0",
+    "highlight.js": "^11.7.0",
     "lit": "2.6.1",
     "mobx": "^6.3.5"
   },
@@ -188,7 +189,8 @@
     "@hilla/frontend": "$@hilla/frontend",
     "@hilla/form": "$@hilla/form",
     "@hilla/generator-typescript-plugin-backbone": "$@hilla/generator-typescript-plugin-backbone",
-    "@hilla/generator-typescript-cli": "$@hilla/generator-typescript-cli"
+    "@hilla/generator-typescript-cli": "$@hilla/generator-typescript-cli",
+    "highlight.js": "$highlight.js"
   },
   "vaadin": {
     "dependencies": {
@@ -290,6 +292,6 @@
       "workbox-core": "6.5.4",
       "workbox-precaching": "6.5.4"
     },
-    "hash": "95cb851be02ed42661129fde244c3e70363a2773af19fa616113c58a4b2d2812"
+    "hash": "9595517108af92417869f99e8f89ee091b367f5ec624f90e1f2f180b4ff11aa8"
   }
 }
