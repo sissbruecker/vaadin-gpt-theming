@@ -1,8 +1,8 @@
-package com.example.application.endpoints;
+package de.sissbruecker.gpttheming.endpoints;
 
-import com.example.application.model.ThemeHistory;
-import com.example.application.model.ThemeSession;
-import com.example.application.services.ThemingService;
+import de.sissbruecker.gpttheming.model.ThemeHistory;
+import de.sissbruecker.gpttheming.model.ThemeSession;
+import de.sissbruecker.gpttheming.services.ThemingService;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.Endpoint;
 import dev.hilla.Nonnull;

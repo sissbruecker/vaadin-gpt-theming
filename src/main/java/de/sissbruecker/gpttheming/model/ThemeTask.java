@@ -1,4 +1,4 @@
-package com.example.application.model;
+package de.sissbruecker.gpttheming.model;
 
 import dev.hilla.Nonnull;
 

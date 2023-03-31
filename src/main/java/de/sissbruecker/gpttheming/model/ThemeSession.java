@@ -1,4 +1,4 @@
-package com.example.application.model;
+package de.sissbruecker.gpttheming.model;
 
 public class ThemeSession {
     private final ThemeHistory history = new ThemeHistory();

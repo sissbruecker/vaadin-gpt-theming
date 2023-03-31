@@ -1,7 +1,7 @@
-package com.example.application.services;
+package de.sissbruecker.gpttheming.services;
 
-import com.example.application.model.ThemeHistory;
-import com.example.application.model.ThemeTask;
+import de.sissbruecker.gpttheming.model.ThemeHistory;
+import de.sissbruecker.gpttheming.model.ThemeTask;
 import com.theokanning.openai.completion.chat.ChatCompletionChoice;
 import com.theokanning.openai.completion.chat.ChatCompletionRequest;
 import com.theokanning.openai.completion.chat.ChatCompletionResult;

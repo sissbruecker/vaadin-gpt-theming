@@ -1,6 +1,6 @@
-package com.example.application.model;
+package de.sissbruecker.gpttheming.model;
 
-import com.example.application.services.ThemingService;
+import de.sissbruecker.gpttheming.services.ThemingService;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.hilla.Nonnull;
 

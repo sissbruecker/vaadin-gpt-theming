@@ -5,9 +5,9 @@ import cssLanguage from "highlight.js/lib/languages/css";
 // @ts-ignore
 import highlightStyles from "highlight.js/styles/github.css?inline";
 import { ThemingEndpoint } from "Frontend/generated/endpoints";
-import ThemeHistory from "Frontend/generated/com/example/application/model/ThemeHistory";
+import ThemeHistory from "Frontend/generated/de/sissbruecker/gpttheming/model/ThemeHistory";
 import { TextFieldChangeEvent } from "@vaadin/text-field";
-import ThemeTask from "Frontend/generated/com/example/application/model/ThemeTask";
+import ThemeTask from "Frontend/generated/de/sissbruecker/gpttheming/model/ThemeTask";
 import "@vaadin/text-field";
 import "@vaadin/text-area";
 import "@vaadin/progress-bar";

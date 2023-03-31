@@ -1,10 +1,11 @@
-package com.example.application;
+package de.sissbruecker.gpttheming;
 
-import com.example.application.model.ThemeSession;
-import com.example.application.services.ThemingService;
+import de.sissbruecker.gpttheming.model.ThemeSession;
+import de.sissbruecker.gpttheming.services.ThemingService;
 import com.theokanning.openai.service.OpenAiService;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.theme.Theme;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -33,10 +34,13 @@ public class Application implements AppShellConfigurator {
         return new ThemeSession();
     }
 
+    @Value("${openai.token}")
+    public String openaiToken;
+
     @Bean
     public OpenAiService openAiService() {
-        String apiKey = System.getProperty("openai.token");
-        return new OpenAiService(apiKey, Duration.ofSeconds(60));
+        System.out.println("Found token: " + openaiToken);
+        return new OpenAiService(openaiToken, Duration.ofSeconds(60));
     }
 
     @Bean

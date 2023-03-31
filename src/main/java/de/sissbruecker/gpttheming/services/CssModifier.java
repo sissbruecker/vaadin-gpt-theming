@@ -1,4 +1,4 @@
-package com.example.application.services;
+package de.sissbruecker.gpttheming.services;
 
 import com.helger.commons.collection.impl.ICommonsList;
 import com.helger.css.ECSSVersion;
